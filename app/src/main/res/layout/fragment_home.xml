@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_screen_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/topLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/br_round"
+            app:srcCompat="@drawable/ic_power_settings" />
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/middleLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btLogo"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_green_border"
+            android:gravity="center"
+            android:text="THX"
+            android:textColor="@color/color_green"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btDolby"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_volume_mute" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btDolby"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_square_with_corner"
+            app:layout_constraintLeft_toRightOf="@+id/btLogo"
+            app:layout_constraintRight_toLeftOf="@+id/btEqualizer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dolby" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btEqualizer"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_square_with_corner"
+            app:layout_constraintLeft_toRightOf="@+id/btDolby"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_equalizer" />
+
+
+        <com.testapp.views.VerticalController
+            android:id="@+id/bass_vertical"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:layout_marginTop="@dimen/common_margin_bottom"
+            app:backgroundColor="@color/color_background"
+            app:cornerRadius="20"
+            app:imageEnabled="false"
+            app:layout_constraintBottom_toTopOf="@+id/btPlug"
+            app:layout_constraintLeft_toLeftOf="@+id/btLogo"
+            app:layout_constraintLeft_toRightOf="@+id/btLogo"
+            app:layout_constraintRight_toRightOf="@id/btLogo"
+            app:layout_constraintTop_toBottomOf="@+id/btLogo"
+            app:progressColor="@color/color_progress"
+            app:step="5"
+            app:text="Bass"
+            app:textBottomPadding="20"
+            app:textColor="@color/colorPrimaryDark"
+            app:textEnabled="true"
+            app:textSize="12sp"
+            app:touchDisabled="true" />
+
+        <com.testapp.views.CustomColorView
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btMute"
+            app:layout_constraintLeft_toRightOf="@+id/bass_vertical"
+            app:layout_constraintRight_toLeftOf="@+id/sound_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/btDolby"
+             />
+
+        <com.testapp.views.VerticalController
+            android:id="@+id/sound_vertical"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:layout_marginTop="@dimen/common_margin_bottom"
+            app:backgroundColor="@color/color_background"
+            app:cornerRadius="20"
+            app:defaultImage="@drawable/ic_volume_down"
+            app:imageEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/btSet"
+            app:layout_constraintLeft_toLeftOf="@+id/btEqualizer"
+            app:layout_constraintLeft_toRightOf="@+id/btEqualizer"
+            app:layout_constraintRight_toRightOf="@+id/btEqualizer"
+            app:layout_constraintTop_toBottomOf="@+id/btEqualizer"
+            app:maxImage="@drawable/ic_volume_up"
+            app:minImage="@drawable/ic_volume_mute"
+            app:progressColor="@color/color_progress"
+            app:step="5"
+            app:textBottomPadding="20"
+            app:textColor="#FF0000"
+            app:textEnabled="true"
+            app:textSize="12sp"
+            app:touchDisabled="true" />
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btPlug"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:background="@drawable/bg_white_corner"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btMute"
+            app:layout_constraintTop_toBottomOf="@+id/bass_vertical"
+            app:srcCompat="@drawable/ic_volume_mute" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btMute"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:background="@drawable/bg_red_corner"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintLeft_toRightOf="@+id/btPlug"
+            app:layout_constraintRight_toLeftOf="@+id/btSet"
+            app:srcCompat="@drawable/ic_volume_off" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/btSet"
+            android:layout_width="@dimen/common_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:background="@drawable/bg_white_corner"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintLeft_toRightOf="@+id/btDolby"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sound_vertical"
+            app:srcCompat="@drawable/ic_check" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/view_width"
+            android:layout_height="@dimen/view_height"
+            android:layout_marginBottom="@dimen/common_margin_bottom"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

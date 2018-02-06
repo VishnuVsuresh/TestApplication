@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="common_width">100dp</dimen>
+    <dimen name="common_margin_bottom">50dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="view_width">5dp</dimen>
+    <dimen name="view_height">20dp</dimen>
+
+    <dimen name="view_port_height">48dp</dimen>
+    <dimen name="view_port_width">48dp</dimen>
+    <dimen name="circle_width">50</dimen>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestApp</string>
+
+    <!--Home-->
+    <integer name="splash_timeout">2000</integer>
+    <string name="nommo_pro">Nommo Pro</string>
+    <string name="settings">Settings</string>
+</resources>
