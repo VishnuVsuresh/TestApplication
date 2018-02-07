@@ -96,7 +96,7 @@
             app:layout_constraintLeft_toRightOf="@+id/bass_vertical"
             app:layout_constraintRight_toLeftOf="@+id/sound_vertical"
             app:layout_constraintTop_toBottomOf="@+id/btDolby"
-             />
+            app:radius="@dimen/circle_width" />
 
         <com.testapp.views.VerticalController
             android:id="@+id/sound_vertical"

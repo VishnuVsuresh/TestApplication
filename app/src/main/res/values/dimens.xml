@@ -8,5 +8,5 @@
     <dimen name="view_height">10dp</dimen>
     <dimen name="view_port_height">24dp</dimen>
     <dimen name="view_port_width">24dp</dimen>
-    <dimen name="circle_width">40</dimen>
+    <dimen name="circle_width">35</dimen>
 </resources>

@@ -27,6 +27,6 @@
 
     </declare-styleable>
     <declare-styleable name="CustomColorView">
-        <attr name="radius" format="integer" />
+        <attr name="radius" format="dimension" />
     </declare-styleable>
 </resources>

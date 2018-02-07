@@ -22,7 +22,7 @@ public class CustomColorView extends View {
                 0xFFFFFF00, 0xFFFF0000
         };;
 
-    private  int CENTER_X = 100;
+    private  float CENTER_X = 100;
 
     public CustomColorView(Context context) {
         super(context);
@@ -39,7 +39,7 @@ public class CustomColorView extends View {
             final TypedArray a = c.obtainStyledAttributes(attrs,
                     R.styleable.CustomColorView, 0, 0);
 
-            CENTER_X = a.getInteger(R.styleable.CustomColorView_radius, 50);
+            CENTER_X = a.getDimension(R.styleable.CustomColorView_radius,40);
         }
 
             Shader s = new SweepGradient(0, 0, mColors, null);
@@ -47,7 +47,7 @@ public class CustomColorView extends View {
             mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
             mPaint.setShader(s);
             mPaint.setStyle(Paint.Style.STROKE);
-            mPaint.setStrokeWidth(10);
+            mPaint.setStrokeWidth(15);
  
 
         }
@@ -57,21 +57,13 @@ public class CustomColorView extends View {
         @Override 
         protected void onDraw(Canvas canvas) {
             float r = CENTER_X - mPaint.getStrokeWidth()*0.5f;
- 
+            canvas.translate(CENTER_X, CENTER_X);
             canvas.drawOval(new RectF(-r, -r, r, r), mPaint);
-
-            canvas.drawCircle(this.getHeight() / 2, this.getWidth() / 2, r, mPaint);
-
-
-        }
+                    }
 
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            setMeasuredDimension(widthMeasureSpec, widthMeasureSpec);
+            setMeasuredDimension((int) CENTER_X*2, (int) CENTER_X*2);
         }
-
-
-
-
     }
  
