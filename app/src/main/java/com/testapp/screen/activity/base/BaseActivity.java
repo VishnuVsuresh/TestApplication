@@ -72,14 +72,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         }
     }
 
-    protected void startActivityForResult(Class<? extends Activity> activity, Bundle bundle, int requestCode) {
-
-        Intent intent = new Intent(this, activity);
-        if (bundle != null) {
-            intent.putExtras(bundle);
-        }
-        startActivityForResult(intent, requestCode);
-    }
 
     public void showLoading() {
 

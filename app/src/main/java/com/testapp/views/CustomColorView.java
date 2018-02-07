@@ -16,7 +16,7 @@ import com.testapp.R;
 
 public class CustomColorView extends View {
         private Paint mPaint;
-        private Paint mCenterPaint;
+        //For setting the 7 color
         private final int[] mColors= new int[] {
                 0xFFFF0000, 0xFFFF00FF, 0xFF0000FF, 0xFF00FFFF, 0xFF00FF00,
                 0xFFFFFF00, 0xFFFF0000
