@@ -3,6 +3,7 @@ package com.testapp.screen.activity.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+
+import butterknife.Unbinder;
 
 
 /**
@@ -21,6 +24,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     protected FragmentManager fragmentManager;
     protected Presenter presenter;
     private View view;
+    private Unbinder mUnBinder;
 
     protected abstract void initializeDagger();
 
@@ -29,6 +33,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     protected abstract void initializeView(View view);
 
     public abstract int getLayoutId();
+    protected abstract void bindView(View view);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,7 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(getLayoutId(), container, false);
+        bindView(view);
         initializeView(view);
         return view;
     }
@@ -110,4 +116,16 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     }
 
 
+    @Override
+    public void onDestroy() {
+        if (mUnBinder != null) {
+            mUnBinder.unbind();
+        }
+        super.onDestroy();
+    }
+
+
+    protected void setUnBinder(Unbinder unBinder) {
+        mUnBinder = unBinder;
+    }
 }

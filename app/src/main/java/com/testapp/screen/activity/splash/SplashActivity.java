@@ -22,19 +22,6 @@ public class SplashActivity extends BaseActivity implements SplashContract.View 
     TextView mLogoTxt;
 
 
-//    @Override
-//    public void onSuccess(Object response, int apiCode) {
-//startActivity(HomeActivity.class,null,null,true);
-//    }
-//
-//    @Override
-//    public void onError(String message, int apiCode) {
-//        ActivityOptionsCompat options = ActivityOptionsCompat.
-//                makeSceneTransitionAnimation(this, mIvLogo, "logo");
-//        startActivity(LoginActivity.class, null, options, true);
-//
-//    }
-
     @Override
     protected void initializeDagger() {
         TestApp app = TestApp.getAppInstance(this);
