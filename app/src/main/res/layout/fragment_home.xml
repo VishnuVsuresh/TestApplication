@@ -36,8 +36,6 @@
             android:layout_width="@dimen/common_width"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_green_border"
-            android:gravity="center"
-            android:text="THX"
             android:textColor="@color/color_green"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/btDolby"
